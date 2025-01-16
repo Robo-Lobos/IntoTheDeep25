@@ -11,7 +11,7 @@ class Drive : LinearOpMode() {
         var hwmap = Hardware(this)
         waitForStart()
 
-        if (opModeIsActive() && !isStopRequested) {
+        while (opModeIsActive() && !isStopRequested) {
             //set variables to controller
             var drive = -(gamepad1.left_stick_y).toDouble() //aka forward
             var strafe =

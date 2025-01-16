@@ -28,7 +28,7 @@ open class Hardware(private var opMode: LinearOpMode) {
     private var pulleyMotor1: DcMotorEx
     private var pulleyMotor2: DcMotorEx
     private var armServo: Servo
-    private var intakeMotor: DcMotor
+    //private var intakeMotor: DcMotor
 
     init {
         myOpMode = opMode
@@ -71,7 +71,7 @@ open class Hardware(private var opMode: LinearOpMode) {
         myOpMode.telemetry.update()
 
         //intake motor
-        intakeMotor = myOpMode.hardwareMap.dcMotor.get("motor4")
+        //intakeMotor = myOpMode.hardwareMap.dcMotor.get("motor4")
     }
 
     fun driveRobot(drive: Double, strafe: Double, turn: Double) {
@@ -138,17 +138,17 @@ open class Hardware(private var opMode: LinearOpMode) {
     }
 
     fun startIntake(){
-        intakeMotor.power = 0.8
+        //intakeMotor.power = 0.8
     }
 
     fun stopIntake(){
-        intakeMotor.power = 0.0
+        //intakeMotor.power = 0.0
     }
 
     fun releaseIntake(){
-        intakeMotor.power = -0.1
+        //intakeMotor.power = -0.1
         Thread.sleep(250)
-        intakeMotor.power = 0.0
+        //intakeMotor.power = 0.0
     }
 
     fun arm(height: Double, belt: Double){
