@@ -21,6 +21,21 @@ class Drive : LinearOpMode() {
             //send to drive function that is still here lmao
             hwmap.driveRobot(drive, strafe, turn)
 
+            if (gamepad1.x){
+                //start intake motor
+                hwmap.startIntake()
+            }
+
+            else if (gamepad1.y){
+                //stop intake motor
+                hwmap.stopIntake()
+            }
+
+            else if (gamepad1.b){
+                //release sample thingie (reverses intake for a bit)
+                hwmap.releaseIntake()
+            }
+
         }
 
     }

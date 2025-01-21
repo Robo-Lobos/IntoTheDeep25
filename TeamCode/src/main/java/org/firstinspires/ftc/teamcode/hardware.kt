@@ -24,11 +24,11 @@ open class Hardware(private var opMode: LinearOpMode) {
     private var backLeftMotord: DcMotor
     private var frontRightMotord: DcMotor
     private var backRightMotord: DcMotor
-    private var armBeltMotor: DcMotorEx
+    //private var armBeltMotor: DcMotorEx
     private var pulleyMotor1: DcMotorEx
     private var pulleyMotor2: DcMotorEx
     private var armServo: Servo
-    //private var intakeMotor: DcMotor
+    private var intakeMotor: DcMotor
 
     init {
         myOpMode = opMode
@@ -41,7 +41,8 @@ open class Hardware(private var opMode: LinearOpMode) {
         backRightMotord = myOpMode.hardwareMap.dcMotor.get("motor3")
 
         //arm motors
-        armBeltMotor = myOpMode.hardwareMap.dcMotor.get("motor0b") as DcMotorEx  //0b motor encoder has sideways odometry pod
+        //armBeltMotor = myOpMode.hardwareMap.dcMotor.get("motor0b") as DcMotorEx  //0b motor encoder has sideways odometry pod
+        intakeMotor = myOpMode.hardwareMap.dcMotor.get("motor0b")
         pulleyMotor1 = myOpMode.hardwareMap.dcMotor.get("motor1b") as DcMotorEx //contains odo encoder
         pulleyMotor2 = myOpMode.hardwareMap.dcMotor.get("motor2b") as DcMotorEx
         //motor 3b contains final odo encoder
@@ -53,7 +54,7 @@ open class Hardware(private var opMode: LinearOpMode) {
 
         //no encoder cables long enough
         //i think some of these motors share an encoder with the dead wheels
-        armBeltMotor.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
+        //armBeltMotor.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
         pulleyMotor1.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
         pulleyMotor2.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
 
@@ -138,17 +139,29 @@ open class Hardware(private var opMode: LinearOpMode) {
     }
 
     fun startIntake(){
-        //intakeMotor.power = 0.8
+        intakeMotor.power = 0.8
+
+        val message1 = "Intake Motor Activated"
+        myOpMode.telemetry.addData(">", message1)
+        myOpMode.telemetry.update()
     }
 
     fun stopIntake(){
-        //intakeMotor.power = 0.0
+        intakeMotor.power = 0.0
+
+        val message1 = "Intake Motor Stopped"
+        myOpMode.telemetry.addData(">", message1)
+        myOpMode.telemetry.update()
     }
 
     fun releaseIntake(){
-        //intakeMotor.power = -0.1
+        intakeMotor.power = -0.1
         Thread.sleep(250)
-        //intakeMotor.power = 0.0
+        intakeMotor.power = 0.0
+
+        val message1 = "Intake Motor Released"
+        myOpMode.telemetry.addData(">", message1)
+        myOpMode.telemetry.update()
     }
 
     fun arm(height: Double, belt: Double){
@@ -157,8 +170,8 @@ open class Hardware(private var opMode: LinearOpMode) {
         myOpMode.telemetry.addData("Arm Power", pulleyMotor2.power)
 
 
-        armBeltMotor.power = belt
-        myOpMode.telemetry.addData("Belt Power", armBeltMotor.power)
+        //armBeltMotor.power = belt
+        //myOpMode.telemetry.addData("Belt Power", armBeltMotor.power)
 
 //            1 -> {
 //                armBeltMotor.power = 0.5
