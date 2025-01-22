@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotor
 import com.qualcomm.robotcore.hardware.DcMotorEx
 import com.qualcomm.robotcore.hardware.DcMotorSimple
 import com.qualcomm.robotcore.hardware.Servo
+import com.qualcomm.robotcore.util.ElapsedTime
 import java.lang.Double.max
 import kotlin.math.abs
 import kotlin.math.atan2
@@ -65,6 +66,8 @@ open class Hardware(private var opMode: LinearOpMode) {
         //reverse as needed (this may need to be the left wheels rather than the right)
         frontRightMotord.direction = (DcMotorSimple.Direction.REVERSE)
         backRightMotord.direction = (DcMotorSimple.Direction.REVERSE)
+
+        val runtime = ElapsedTime()
 
         //update telemetry
         val message = "Hardware Initialized"
