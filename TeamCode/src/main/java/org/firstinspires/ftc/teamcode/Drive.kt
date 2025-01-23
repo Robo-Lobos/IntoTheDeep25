@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp
 import org.firstinspires.ftc.teamcode.hardware.Hardware
 
 
-@TeleOp(name = "Drive")
+@TeleOp(name = "DriveReal")
 class Drive : LinearOpMode() {
     override fun runOpMode() {
         var hwmap = Hardware(this)

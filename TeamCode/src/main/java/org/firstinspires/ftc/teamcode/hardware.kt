@@ -48,10 +48,10 @@ open class Hardware(private var opMode: LinearOpMode) {
         pulleyMotor2 = myOpMode.hardwareMap.dcMotor.get("motor2b") as DcMotorEx
         //motor 3b contains final odo encoder
 
-        frontLeftMotord.mode = DcMotor.RunMode.RUN_USING_ENCODER
-        backLeftMotord.mode = DcMotor.RunMode.RUN_USING_ENCODER
-        frontRightMotord.mode = DcMotor.RunMode.RUN_USING_ENCODER
-        backRightMotord.mode = DcMotor.RunMode.RUN_USING_ENCODER
+        frontLeftMotord.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
+        backLeftMotord.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
+        frontRightMotord.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
+        backRightMotord.mode = DcMotor.RunMode.RUN_WITHOUT_ENCODER
 
         //no encoder cables long enough
         //i think some of these motors share an encoder with the dead wheels
