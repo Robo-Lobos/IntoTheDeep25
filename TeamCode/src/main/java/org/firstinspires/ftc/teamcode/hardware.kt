@@ -168,7 +168,7 @@ open class Hardware(private var opMode: LinearOpMode) {
     }
 
     fun arm(arm: Double){
-        pulleyMotor1.power = (arm / 0.01)
+        pulleyMotor1.power = (arm * 0.25)
 
 //        pulleyMotor1.power = height*0.5
 //        pulleyMotor2.power = pulleyMotor1.power

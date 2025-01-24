@@ -14,7 +14,7 @@ class Arm : LinearOpMode() {
         while (opModeIsActive() && !isStopRequested) {
             //set variables to controller
             var armpwr = -(gamepad1.right_stick_y).toDouble()
-            hwmap.arm((armpwr/0.01))
+            hwmap.arm(armpwr)
 
 
         }
