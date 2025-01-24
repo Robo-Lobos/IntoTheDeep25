@@ -167,10 +167,12 @@ open class Hardware(private var opMode: LinearOpMode) {
         myOpMode.telemetry.update()
     }
 
-    fun arm(height: Double, belt: Double){
-        pulleyMotor1.power = height*0.5
-        pulleyMotor2.power = pulleyMotor1.power
-        myOpMode.telemetry.addData("Arm Power", pulleyMotor2.power)
+    fun arm(arm: Double){
+        pulleyMotor1.power = (arm / 0.01)
+
+//        pulleyMotor1.power = height*0.5
+//        pulleyMotor2.power = pulleyMotor1.power
+//        myOpMode.telemetry.addData("Arm Power", pulleyMotor2.power)
 
 
         //armBeltMotor.power = belt

@@ -20,26 +20,24 @@ class AutoDrive : LinearOpMode() {
             hwmap.driveRobot(0.5,0.075,0.0)
         }
 
-        resetRuntime()
 
         //drives back to starting position
-        while (opModeIsActive() && (runtime < 0.25+3) && (runtime > 0.25)) {
+        while (opModeIsActive() && (runtime < 0.25+3+3) && (runtime > 0.25+3)) {
             telemetry.addData("Backwards", "Leg 2: %4.1f S Elapsed", runtime)
             telemetry.update()
 
             hwmap.driveRobot(-0.5,0.075,0.0)
         }
 
-        resetRuntime()
 
-        while (opModeIsActive() && (runtime < 0.25+1.5) && (runtime > 0.25)) {
+        while (opModeIsActive() && (runtime < 0.25+3+3+1.5) && (runtime > 0.25+3+3)) {
             telemetry.addData("Forward left", "Leg 1: %4.1f S Elapsed", runtime)
             telemetry.update()
 
             hwmap.driveRobot(0.5,-0.1,0.0)
         }
 
-        while (opModeIsActive() && (runtime < 0.25+1.5+1.5) && (runtime > 0.25+1.5)) {
+        while (opModeIsActive() && (runtime < 0.25+3+3+1.5+1.5) && (runtime > 0.25+3+3+1.5)) {
             telemetry.addData("Forward right", "Leg 1: %4.1f S Elapsed", runtime)
             telemetry.update()
 
