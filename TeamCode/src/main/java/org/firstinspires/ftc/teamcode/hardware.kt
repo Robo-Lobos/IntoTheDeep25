@@ -169,6 +169,10 @@ open class Hardware(private var opMode: LinearOpMode) {
         myOpMode.telemetry.update()
     }
 
+    fun armBoost(arm: Double){
+        pulleyMotor1.power = (arm * 0.5)
+    }
+
     fun arm(arm: Double){
         pulleyMotor1.power = (arm * 0.25)
 

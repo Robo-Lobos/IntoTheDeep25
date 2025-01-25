@@ -23,7 +23,16 @@ class Drive : LinearOpMode() {
 
             //for arm movement
             var armpwr = -(gamepad1.right_stick_y).toDouble()
-            hwmap.arm(armpwr)
+
+            //normal
+            if (gamepad1.right_trigger == 0.0f) {
+                hwmap.arm(armpwr)
+            }
+
+            //boost
+            if (gamepad1.right_trigger > 0) {
+            hwmap.armBoost(armpwr)
+        }
 
             //boost arm power maybe
 

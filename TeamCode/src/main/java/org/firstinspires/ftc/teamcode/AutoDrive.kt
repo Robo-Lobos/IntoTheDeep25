@@ -22,16 +22,30 @@ class AutoDrive : LinearOpMode() {
         }
 
 
-//        var a = 0.25 + 3
-//        var deltat: Double = 3.0
-//        var b: Double  = a+deltat
-//        //drives back to starting position
-//        while (opModeIsActive() && (runtime < b) && (runtime > a)) {
-//            telemetry.addData("Backwards", "Leg 2: %4.1f S Elapsed", runtime)
-//            telemetry.update()
-//
-//            hwmap.driveRobot(-0.5,-0.075,0.0)
-//        }
+        var a = 0.25 + 3
+        var deltat: Double = 3.0
+        var b: Double  = a+deltat
+        //drives back to starting position
+        while (opModeIsActive() && (runtime < b) && (runtime > a)) {
+            telemetry.addData("Backwards", "Leg 2: %4.1f S Elapsed", runtime)
+            telemetry.update()
+
+            hwmap.driveRobot(-0.5,-0.075,0.0)
+        }
+
+        while (opModeIsActive() && (runtime < 21) && (runtime > 6.25)) {
+            telemetry.addData("WAITING", "Leg 2: %4.1f S Elapsed", runtime)
+            telemetry.update()
+
+            //hwmap.driveRobot(-0.5,-0.075,0.0)
+        }
+
+        while (opModeIsActive() && (runtime < 27.5) && (runtime > 21)) {
+            telemetry.addData("Backwards", "Leg 3: %4.1f S Elapsed", runtime)
+            telemetry.update()
+
+            hwmap.driveRobot(-0.5,-0.075,0.0)
+        }
 //
 //        deltat = 1.5
 //        var b2: Double = b + deltat
