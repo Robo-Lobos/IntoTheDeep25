@@ -21,6 +21,11 @@ class Drive : LinearOpMode() {
             //send to drive function that is still here lmao
             hwmap.driveRobot(drive, strafe, turn)
 
+            //for arm movement
+            var armpwr = -(gamepad1.right_stick_y).toDouble()
+            hwmap.arm(armpwr)
+
+            //for intake stuff
             if (gamepad1.x){
                 //start intake motor
                 hwmap.startIntake()
