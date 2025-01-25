@@ -22,15 +22,15 @@ class Drive : LinearOpMode() {
             hwmap.driveRobot(drive, strafe, turn)
 
             //for arm movement
-            var armpwr = -(gamepad1.right_stick_y).toDouble()
+            var armpwr = -(gamepad2.right_stick_y).toDouble()
 
             //normal
-            if (gamepad1.right_trigger == 0.0f) {
+            if (gamepad2.right_trigger == 0.0f) {
                 hwmap.arm(armpwr)
             }
 
             //boost
-            if (gamepad1.right_trigger > 0) {
+            if (gamepad2.right_trigger > 0) {
             hwmap.armBoost(armpwr)
         }
 
@@ -38,17 +38,17 @@ class Drive : LinearOpMode() {
 
 
             //for intake stuff
-            if (gamepad1.x){
+            if (gamepad2.x){
                 //start intake motor
                 hwmap.startIntake()
             }
 
-            else if (gamepad1.y){
+            else if (gamepad2.y){
                 //stop intake motor
                 hwmap.stopIntake()
             }
 
-            else if (gamepad1.b){
+            else if (gamepad2.b){
                 //release sample thingie (reverses intake for a bit)
                 hwmap.releaseIntake()
             }
