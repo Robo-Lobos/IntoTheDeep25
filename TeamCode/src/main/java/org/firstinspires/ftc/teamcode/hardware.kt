@@ -170,7 +170,7 @@ open class Hardware(private var opMode: LinearOpMode) {
     }
 
     fun armBoost(arm: Double){
-        pulleyMotor1.power = (arm * 0.5)
+        pulleyMotor1.power = (arm)
     }
 
     fun arm(arm: Double){
