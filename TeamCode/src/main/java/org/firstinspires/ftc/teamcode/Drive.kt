@@ -25,6 +25,9 @@ class Drive : LinearOpMode() {
             var armpwr = -(gamepad1.right_stick_y).toDouble()
             hwmap.arm(armpwr)
 
+            //boost arm power maybe
+
+
             //for intake stuff
             if (gamepad1.x){
                 //start intake motor
