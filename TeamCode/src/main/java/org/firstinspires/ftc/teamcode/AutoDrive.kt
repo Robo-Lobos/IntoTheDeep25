@@ -14,7 +14,7 @@ class AutoDrive : LinearOpMode() {
         waitForStart()
 
         //drives forward to push middle sample
-        while (opModeIsActive() && (runtime < 0.25+3) && (runtime > 0.25)) {
+        while (opModeIsActive() && (runtime < 0.25+3)) {
             telemetry.addData("Forward", "Leg 1: %4.1f S Elapsed", runtime)
             telemetry.update()
 

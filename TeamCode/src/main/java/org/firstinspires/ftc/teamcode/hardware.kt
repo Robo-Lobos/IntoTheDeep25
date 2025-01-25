@@ -144,7 +144,7 @@ open class Hardware(private var opMode: LinearOpMode) {
     }
 
     fun startIntake(){
-        pulleyMotor2.power = 0.8
+        pulleyMotor2.power = -1.0
 
         val message1 = "Intake Motor Activated"
         myOpMode.telemetry.addData(">", message1)
@@ -160,8 +160,8 @@ open class Hardware(private var opMode: LinearOpMode) {
     }
 
     fun releaseIntake(){
-        pulleyMotor2.power = -0.1
-        Thread.sleep(250)
+        pulleyMotor2.power = 1.0
+        Thread.sleep(1500)
         pulleyMotor2.power = 0.0
 
         val message1 = "Intake Motor Released"
