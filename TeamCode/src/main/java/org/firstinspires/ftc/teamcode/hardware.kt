@@ -13,6 +13,8 @@ import kotlin.math.cos
 import kotlin.math.hypot
 import kotlin.math.sin
 
+//😘😍
+
 open class Hardware(private var opMode: LinearOpMode) {
 
 
